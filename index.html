@@ -233,7 +233,7 @@ cursor: pointer;
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Hi! I’m <strong>Heart Janine Gavito</strong>, 22 years old, currently a 2nd-year college student 
+      Hi! I’m <strong>Heart Janine Gavito</strong>, 23 years old, currently a 2nd-year college student 
       at <strong>CPSU-Moises Padilla</strong> taking up 
       <em>Bachelor of Science in Information Technology</em>.  
     </p>
@@ -330,8 +330,119 @@ cursor: pointer;
 
   <!-- Footer -->
   <footer>
-    © 2025 Heart Janine Gavito | All Rights Reserved 💖
+    © 2026 Heart Janine Gavito | All Rights Reserved 💖
   </footer>
+         
+ <!-- Chatbot -->  <div class="chatbot-container">  
+  <div class="chat-header" onclick="toggleChat()">  
+   Chat with me  
+  </div>    <div class="chat-body" id="chatBody">  
+    <div class="chat-messages" id="chatMessages">  
+      <div class="bot-message">Hi! I'm Heart Janine Gavito!  
+      Ask me anything!</div>  
+    </div>  <div class="chat-input">  
+  <input type="text" id="userInput" placeholder="Type a message...">  
+  <button onclick="sendMessage()">➤</button>  
+</div>
 
+  </div>  
+</div> <script>
+function toggleChat() {
+  const chat = document.getElementById("chatBody");
+  chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim();
+  if (message === "") return;
+
+  const chatMessages = document.getElementById("chatMessages");
+
+  // 👤 USER MESSAGE
+  const userMsg = document.createElement("div");
+  userMsg.className = "user-message";
+  userMsg.textContent = message;
+  chatMessages.appendChild(userMsg);
+
+  input.value = "";
+
+  // ⏳ TYPING INDICATOR
+  const typing = document.createElement("div");
+  typing.className = "typing";
+  typing.textContent = "Bot is typing...";
+  chatMessages.appendChild(typing);
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // ⏱ DELAY BOT RESPONSE
+  setTimeout(() => {
+    typing.remove();
+
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-message";
+    botMsg.textContent = getBotResponse(message);
+    chatMessages.appendChild(botMsg);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 1200);
+}
+
+function getBotResponse(input) {
+  input = input.toLowerCase();
+
+  // Greeting
+  if (input.includes("hello") || input.includes("hi")) {
+    return "Hi there!  Welcome to my portfolio. How may I assist you today?";
+  }
+
+  // About
+  if (input.includes("about")) {
+    return "I'm Heart Janine Gavito, a BSIT student who loves creativity and learning";
+  }
+
+  // Skills
+  if (input.includes("skills")) {
+    return "I am skilled in HTML, CSS, Java, Python, Figma, and Canva 🎨";
+  }
+
+  // Projects
+  if (input.includes("projects")) {
+    return "You can check my projects in the Projects section above 💻";
+  }
+
+  // Contact
+  if (input.includes("contact")) {
+    return "You can contact me through email or Facebook in the Contact section 📩";
+  }
+      // 🚫 Inappropriate
+  if (
+    input.includes("stupid") ||
+    input.includes("idiot") ||
+    input.includes("hate") ||
+    input.includes("sex") ||
+    input.includes("nude") ||
+    input.includes("bobo") ||
+    input.includes("walang kwenta")
+  ) {
+    return "I maintain a respectful and professional environment. I cannot respond to inappropriate requests. Thank you for your understanding.";
+  }
+
+  // 👋 Ending conversation
+  if (
+    input.includes("thank you") ||
+    input.includes("thanks") ||
+    input.includes("bye") ||
+    input.includes("goodbye") ||
+    input.includes("that's all") ||
+    input.includes("ok") ||
+    input.includes("okay")
+  ) {
+    return "You're welcome  Thank you for visiting my portfolio. Have a great day!";
+  }
+      // Default fallback
+  return "Thank you for your message. I am designed to assist only with portfolio-related questions about my skills, projects, and background ";
+}
+</script>
 </body>
 </html>
