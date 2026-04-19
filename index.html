@@ -230,7 +230,7 @@ cursor: pointer;
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects/projects.html">Projects</a></li>
       <a href="#certificates" class="btn">Certificates</a>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -347,15 +347,15 @@ cursor: pointer;
     <h2>Contact Me</h2>
     <p>Let’s connect! You can reach me through:</p>
     <div class="contact-info">
-      <p>📧 Email: <a href="mailto:heartjanine@example.com">heartjanine@example.com</a></p>
-      <p>📱 Facebook: <a href="https://facebook.com" target="_blank">Heart Janine Gavito</a></p>
+      <p>📧 Email: <a href="mailto:gheartjanine@gmail.com">gheartjanine@gmail.com</a></p>
+      <p>📱 Facebook: <a href="https://facebook.com" target="_blank">Heart Janine </a></p>
       <p>📍 Location: Moises Padilla, Negros Occidental</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    © 2026 Heart Janine Gavito | All Rights Reserved 💖
+   
   </footer>
          
  <!-- Chatbot -->  <div class="chatbot-container">  
@@ -363,7 +363,7 @@ cursor: pointer;
    Chat with me  
   </div>    <div class="chat-body" id="chatBody">  
     <div class="chat-messages" id="chatMessages">  
-      <div class="bot-message">Hi! I'm Heart Janine Gavito!  
+      <div class="bot-message">Hi! I'm Heart Janine's Assistant!  
       Ask me anything!</div>  
     </div>  <div class="chat-input">  
   <input type="text" id="userInput" placeholder="Type a message...">  
@@ -422,23 +422,23 @@ function getBotResponse(input) {
   }
 
   // About
-  if (input.includes("about")) {
-    return "I'm Heart Janine Gavito, a BSIT student who loves creativity and learning";
+  if (input.includes("name")) {
+    return "The owner of this portfolio is Heart Janine Gavito, a BSIT student from CPSU Moises Padilla. You may check her about for more infor. ";
   }
 
   // Skills
   if (input.includes("skills")) {
-    return "I am skilled in HTML, CSS, Java, Python, Figma, and Canva 🎨";
+    return "She is skilled in HTML, CSS, Java, Python, Figma, and Canva";
   }
 
   // Projects
   if (input.includes("projects")) {
-    return "You can check my projects in the Projects section above 💻";
+    return "You can check her projects in the Projects section above";
   }
 
   // Contact
   if (input.includes("contact")) {
-    return "You can contact me through email or Facebook in the Contact section 📩";
+    return "You can contact her through email: gheartjanine@gmail.com or Facebook:Heart Janine";
   }
       // 🚫 Inappropriate
   if (
