@@ -357,7 +357,7 @@ cursor: pointer;
   </section
   
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <p>Let’s connect! You can reach me through:</p>
     <div class="contact-info">
       <p>📧 Email: <a href="mailto:gheartjanine@gmail.com">gheartjanine@gmail.com</a></p>
@@ -438,6 +438,9 @@ function getBotResponse(input) {
   if (input.includes("name")) {
     return "The owner of this portfolio is Heart Janine Gavito, a BSIT student from CPSU Moises Padilla. You may check her about for more info. ";
   }
+    if (input.includes("age")) {
+    return "Heart is now 23 years old. You may check her about for more info. ";
+  }
 
   // Skills
   if (input.includes("skills")) {
@@ -451,7 +454,7 @@ function getBotResponse(input) {
 
   // Contact
   if (input.includes("contact")) {
-    return "You can contact her through email: gheartjanine@gmail.com or Facebook:Heart Janine";
+    return "You can contact her through email: gheartjanine@gmail.com or Facebook: Heart Janine";
   }
       // 🚫 Inappropriate
   if (
@@ -466,6 +469,8 @@ function getBotResponse(input) {
     return "I maintain a respectful and professional environment. I cannot respond to inappropriate requests. Thank you for your understanding.";
   }
 
+  
+
   // 👋 Ending conversation
   if (
     input.includes("thank you") ||
@@ -476,7 +481,15 @@ function getBotResponse(input) {
     input.includes("ok") ||
     input.includes("okay")
   ) {
-    return "You're welcome  Thank you for visiting my portfolio. Have a great day!";
+    return "You're welcome!  Thank you for visiting my portfolio. Have a great day!";
+  }
+
+   if input.includes("bye") ||
+      input.includes("goodbye") ||
+      input.includes("that's all") ||
+      input.includes("ok") ||
+      input.includes("okay"){
+    return "Thank you for visiting my portfolio. Have a great day!";
   }
       // Default fallback
   return "Thank you for your message. I am designed to assist only with portfolio-related questions about my skills, projects, and background ";
