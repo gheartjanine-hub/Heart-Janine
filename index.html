@@ -300,46 +300,72 @@ cursor: pointer;
   color: #ff69b4;
   padding-left: 10px;
 }<style>
-  .certificate-grid {
+  /* Neater Gallery Grid */
+  .certificate-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
   }
 
-  .certificate-card {
-    background: #fff;
-    border: 1px solid #ffc0cb;
-    border-radius: 12px;
+  .cert-item {
+    position: relative;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s;
+    background: white;
+  }
+
+  .cert-item:hover {
+    transform: scale(1.03); /* Subtle zoom */
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3); /* Pink glow */
+  }
+
+  .cert-item img {
     width: 100%;
-    max-width: 280px;
+    height: 160px; /* Uniform height */
+    object-fit: contain; /* Keeps the whole certificate visible without cropping */
+    background: #fafafa;
+    display: block;
   }
 
-  .certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.15);
-  }
-
-  .certificate-card img {
-    width: 100%;
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Clips image neatly without stretching */
-    margin: 0; /* Removes default margins */
-    border-radius: 0;
-  }
-
-  .certificate-info {
-    padding: 15px;
-    background: #fff0f5;
-    font-size: 14px;
-    font-weight: bold;
-    color: #c2185b;
-    border-top: 1px solid #ffc0cb;
+  .cert-label {
+    font-size: 12px;
+    padding: 8px;
+    color: #888;
+    background: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 </style>
+
+<section id="certificates">
+  <h2>Certifications & Seminars</h2>
+  
+  <div class="certificate-gallery">
+    <div class="cert-item">
+      <img src="received_1472936624187757.jpeg" alt="Cisco Award">
+      <div class="cert-label">Cisco Recognition</div>
+    </div>
+
+    <div class="cert-item">
+      <img src="received_1494399308934304~2.jpeg" alt="Seminar Certificate">
+      <div class="cert-label">Seminar Attendance</div>
+    </div>
+
+    <div class="cert-item">
+      <img src="IMG_20260419_090353~2.jpg" alt="Seminar Certificate">
+      <div class="cert-label">Seminar Attendance</div>
+    </div>
+
+    <div class="cert-item">
+      <img src="received_1264469795877903~2.jpeg" alt="Seminar Certificate">
+      <div class="cert-label">Seminar Attendance</div>
+    </div>
+  </div>
+</section>
 
 <section id="certificates">
   <h2>My Certifications</h2>
